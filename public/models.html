@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Management</title>
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/forms.css">
+
+
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="atropos my-atropos">
+            <a href="/">Главная</a>
+        </div>
+        <div class="atropos my-atropos">
+            <a href="info">Подробнее</a>
+        </div>
+        <div class="atropos my-atropos">
+            <a href="users">Пользователи</a>
+        </div>
+        <div class="atropos my-atropos">
+            <a href="models">Модели</a>
+        </div>
+        <div class="atropos my-atropos">
+            <a href="api-docs">Swagger</a>
+        </div>
+        <!-- Повторите для других элементов меню -->
+    </div>
+</header>
+<section>
+    <h1>Model Data Management</h1>
+
+    <!-- Таблица для отображения всех пользователей -->
+    <h2>All Models</h2>
+    <div id="modelTable">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Model</th>
+            </tr>
+            </thead>
+            <tbody id="modelsTableBody">
+            </tbody>
+        </table>
+    </div>
+
+
+    <h2>Add Model</h2>
+    <form id="addModel">
+        <input type="text" id="addName" placeholder="Name" required>
+        <input type="text" id="addScore" placeholder="Score" required>
+        <button type="submit">Add Model</button>
+    </form>
+
+    <!-- Форма для изменения данных -->
+    <h2>Update Model</h2>
+    <form id="updateModel">
+        <input type="number" id="updateId" placeholder="ID" required>
+        <input type="text" id="updateName" placeholder="New Name">
+        <input type="text" id="updateScore" placeholder="New Score">
+        <button type="submit">Update Score</button>
+    </form>
+
+    <!-- Форма для удаления данных -->
+    <h2>Delete Model</h2>
+    <form id="deleteModel">
+        <input type="number" id="deleteId" placeholder="ID" required>
+        <button type="submit">Delete Model</button>
+    </form>
+
+    <!-- Форма для поиска данных -->
+    <h2>Search Model</h2>
+    <form id="searchModel">
+        <input type="number" id="searchId" placeholder="ID" required>
+        <button type="submit">Search Model</button>
+    </form>
+
+    <!-- Результат поиска -->
+    <h2>Search Result</h2>
+    <div id="searchResultModel"></div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="modelScript.js"></script>
+<script>window.onload = loadModels()</script>
+</body>
+</html>
